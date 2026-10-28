@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Shesh Shiromani – Portfolio
 
 Plain HTML, CSS and JavaScript. No build step, no dependencies.
@@ -32,3 +33,7 @@ Or with the CLI: `npx vercel` inside this folder.
     git branch -M main
     git remote add origin https://github.com/rbksh/<repo-name>.git
     git push -u origin main
+=======
+# rbksh-portfolio-website-main
+personal portfolio website, thanks Claude! 
+>>>>>>> 5dc94aebeb08c6a60921e8e73e5f8d03ac2997e5
