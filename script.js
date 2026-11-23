@@ -19,6 +19,7 @@ papers:[
 ['Unlocking the Mathematical Code behind Cybersecurity','CyberX, DPS R.K. Puram · Aug 2025','Shortlisted for the CBSE National Cyber-Security Awareness Competition. How hashing and encryption lean on permutations and combinations, linear algebra and matrix multiplication.','assets/pdf/math-behind-cybersecurity.pdf'],
 ['Unlocking the Mysteries of Interstellar Time Travel','Phyzard, DPS R.K. Puram, Medium · Jan 2024','Conceptual analysis of the relativistic and thermodynamic limits on interstellar travel timescales, starting from Kip Thorne’s closed timelike curves and Nolan’s Interstellar.','assets/pdf/interstellar-time-travel.pdf']],
 exp:[
+['Sales and AI GTM Intern','Ninad AI','Nov 2026 – Present','Working on sales and go-to-market for AI products.'],
 ['AI Safety Research Fellow','Algoverse','Jun 2026 – Sep 2026','Selected for an intensive 4-month research cohort mentored by engineers from MAANG and researchers from MIT, Stanford, Caltech, UCLA and ETH Zurich.'],
 ['Director, India Chapter (earlier Econometrics Researcher)','Edunomix Institute','Sep 2025 – Present','Building a course of problem sets from technical rounds of tier 1 trading firms and investment banks: probability, system design and competitive programming.'],
 ['Director of Research and Development','Kronos','May 2026 – Aug 2026','Training a supervised ML model on NASA, SpaceX and ISRO data to simulate planetary conditions, with AR/VR deployment planned. Ran merit-based selection of all core team members and leads.'],
