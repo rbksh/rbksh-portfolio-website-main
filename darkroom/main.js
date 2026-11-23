@@ -106,6 +106,9 @@ if ('IntersectionObserver' in window && !reduce) {
   document.querySelectorAll('.develops').forEach(el => io.observe(el));
 } else document.querySelectorAll('.develops').forEach(el => el.classList.add('in'));
 
+/* test strip: tap to toggle the kept print (touch has no hover) */
+document.querySelector('.strip')?.addEventListener('click', e => e.currentTarget.classList.toggle('kept'));
+
 /* nav: mark the section in view */
 {
   const links = [...document.querySelectorAll('.bar nav a')];

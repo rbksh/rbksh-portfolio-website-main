@@ -142,10 +142,27 @@ cite{display:block;font-style:normal;color:var(--dim);font-size:.95rem;margin-to
 .also h3{font-size:1.1rem;font-style:italic;color:var(--silver)}
 .also p{color:var(--dim);line-height:1.8}
 
-/* full bleed plate */
-.plate{margin:7rem calc(-1 * clamp(1.25rem,5vw,4rem)) 0;position:relative}
-.plate img{width:100%;height:min(88vh,52rem);object-fit:cover;object-position:center 62%}
-.plate figcaption{max-width:68rem;margin:.9rem auto 0;padding:0 clamp(1.25rem,5vw,4rem)}
+/* the test strip: one print, shown near its true size */
+.plate{max-width:60rem;margin:9rem auto 0;display:grid;grid-template-columns:minmax(0,23rem) minmax(0,19rem);gap:4rem;align-items:center;justify-content:center}
+.strip{--m:14px;position:relative;background:var(--paper);padding:var(--m) var(--m) 3.2rem;box-shadow:0 30px 70px rgba(0,0,0,.55);transform:rotate(-1.4deg);transition:transform .6s cubic-bezier(.3,1.4,.5,1);cursor:pointer;outline-offset:6px}
+.strip img{width:100%;aspect-ratio:560/748;object-fit:cover}
+.band{position:absolute;top:var(--m);bottom:3.2rem;width:calc((100% - 2 * var(--m)) / 4);transition:opacity .9s ease}
+.band.b1{left:var(--m);background:rgba(246,240,228,.62)}
+.band.b2{left:calc(var(--m) + (100% - 2 * var(--m)) / 4);background:rgba(246,240,228,.3)}
+.band.b3{left:calc(var(--m) + (100% - 2 * var(--m)) / 2)}
+.band.b4{left:calc(var(--m) + (100% - 2 * var(--m)) * .75);background:rgba(10,7,5,.5)}
+.band + .band{box-shadow:inset 1px 0 0 rgba(230,223,210,.35)}
+.band i{position:absolute;left:0;right:0;bottom:-2.6rem;text-align:center;font:400 1.05rem "Kalam",cursive;color:#5b524a;font-style:normal;transition:opacity .9s}
+.band.b3 i{color:var(--safe)}
+.band.b3 i::after{content:"";position:absolute;left:50%;top:50%;width:2.6rem;height:1.7rem;transform:translate(-50%,-50%) rotate(-4deg);border:1.5px solid var(--safe);border-radius:50%;filter:url(#pencil)}
+.final{position:absolute;left:0;right:0;bottom:.85rem;text-align:center;font:400 1.05rem "Kalam",cursive;color:var(--safe);opacity:0;transition:opacity .9s .2s}
+.strip:hover,.strip:focus-visible,.strip.kept{transform:rotate(0)}
+.strip:hover .band,.strip:focus-visible .band,.strip.kept .band{opacity:0}
+.strip:hover .final,.strip:focus-visible .final,.strip.kept .final{opacity:1}
+.plate figcaption{margin:0;font-style:normal;color:var(--silver);font-size:1.05rem}
+.plate figcaption p{margin:0 0 1em}
+.plate-title{font-weight:200;font-size:clamp(2.4rem,5vw,3.6rem);line-height:1;color:var(--paper)}
+.plate-hint{font-style:italic;color:var(--dim);font-size:.95rem}
 
 /* ───────── Prints on the line ───────── */
 .line{height:1px;background:var(--line);max-width:64rem;margin:0 0 -1px}
@@ -264,6 +281,8 @@ footer button.link{font:inherit;font-style:italic;color:var(--safe);background:n
   .vert{position:static;writing-mode:horizontal-tb;margin-bottom:1.2rem}
   .vert span{margin:0 .6rem 0 0}
   .who,.letter-wrap{grid-template-columns:1fr;gap:2.5rem}
+  .plate{grid-template-columns:1fr;gap:2.5rem;margin-top:6rem}
+  .strip{max-width:20rem;margin:0 auto}
   .who .photo{position:static;max-width:15rem}
   .small-photo{max-width:12rem}
   .prints{grid-template-columns:1fr;gap:3rem}
