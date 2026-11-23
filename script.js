@@ -1,5 +1,5 @@
 const L={li:'https://www.linkedin.com/in/shesh08/',gh:'https://github.com/rbksh',em:'rbkshesh@gmail.com'};
-const RESUME='assets/pdf/Resume_Shesh_Shiromani.pdf';
+const RESUME='assets/pdf/Resume_Shiromani_Shesh.pdf';
 const IMG={a:'assets/img/headshot.jpg',b:'assets/img/cliff.jpg',c:'assets/img/street.jpg'};
 const PAGES=['home','about','experience','projects','research','honors','blog','contact'];
 const $=s=>document.querySelector(s),sp=t=>[...t].map(c=>c==' '?' ':`<span class="w">${c}</span>`).join('');
