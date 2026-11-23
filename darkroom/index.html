@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shesh · शेष</title>
+<meta name="description" content="Shesh Shiromani. शेष, Sanskrit for that which remains.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400&family=Tiro+Devanagari+Hindi:ital@0;1&family=Courier+Prime&family=Kalam:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect x=%2214%22 y=%2214%22 width=%2272%22 height=%2272%22 rx=%228%22 fill=%22%23c42b1c%22/></svg>">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- rough ink edge for seals and grease pencil -->
+    <filter id="ink"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="2.6"/></filter>
+    <filter id="pencil"><feTurbulence type="fractalNoise" baseFrequency=".6" numOctaves="1" seed="9"/><feDisplacementMap in="SourceGraphic" scale="3.5"/></filter>
+  </defs>
+</svg>
+
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ============ The darkroom: reveal the print with a safelight ============ -->
+<section class="dark" id="top" aria-label="Opening">
+  <div class="print-latent" id="latent">
+    <div class="latent-inner">
+      <p class="dev">शेष</p>
+      <h1>Shesh Shiromani</h1>
+      <p class="gloss"><i>śeṣa</i>, Sanskrit: that which remains.</p>
+    </div>
+  </div>
+  <p class="hint" id="hint">The room is dark. Move your light across the paper.</p>
+  <button class="develop" id="develop" type="button">Develop the print</button>
+</section>
+
+<header class="bar" id="bar">
+  <a class="seal-mark" href="#top" aria-label="Back to the top"><span>शेष</span></a>
+  <nav aria-label="Sections">
+    <a href="#parichay">Who</a><a href="#karm">Work</a><a href="#rachna">Made</a><a href="#lekh">Writing</a><a href="#taal">Taal</a><a href="#sangrah">Archive</a><a href="#patra">Letter</a>
+  </nav>
+  <p class="seals-found" id="sealsFound" hidden></p>
+  <button type="button" class="drone" id="drone" aria-pressed="false" title="A tanpura drone, very quietly">Tanpura</button>
+</header>
+<button type="button" class="cord" id="cord" aria-pressed="false" aria-label="Pull the cord"><span></span></button>
+
+<main>
+
+<!-- ============ परिचय / Who ============ -->
+<section class="sec" id="parichay">
+  <p class="vert" aria-hidden="true"><span lang="hi">परिचय</span> who</p>
+  <p class="mg" style="--t:30rem">Feynman played the bongos. I like to think he’d have tried tabla.</p>
+  <div class="who">
+    <figure class="photo develops">
+      <img src="../assets/img/headshot.jpg" alt="Shesh in a suit and red tie, smiling">
+      <figcaption>Frame 1. Developed in the dark, like most things.</figcaption>
+    </figure>
+    <div class="who-text">
+      <h2 class="big">I’m Shesh.</h2>
+      <p class="lede">A student at Birla Institute of Technology and Science, Pilani, and a school graduate of DPS R.K. Puram. I play tabla, I beatbox, and I explain ideas the long way round.</p>
+      <p>I love classical and statistical physics, machine learning, algorithms and calculus, and plan to study theoretical physics and EECS further. But the thing I actually do every day is practise. In Hindustani music that’s called <i>riyaaz</i>: the same phrase, again, until it stops being something you play and becomes something you are.</p>
+      <blockquote>
+        <p>“You shall become the person you are.”</p>
+        <cite>Friedrich Nietzsche, <i>The Gay Science</i></cite>
+      </blockquote>
+      <dl class="facts">
+        <dt>Now</dt><dd>B.Sc., BITS Pilani, 2026 to 2030</dd>
+        <dt>Before</dt><dd>DPS R.K. Puram, 2019 to 2026. Physics, Chemistry, Maths, English, CS</dd>
+        <dt>Speaks</dt><dd id="skills"></dd>
+      </dl>
+      <p><a class="link" href="../assets/pdf/Resume_Shiromani_Shesh.pdf">Read the résumé (PDF)</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ कर्म / Work: a contact sheet ============ -->
+<section class="sec" id="karm">
+  <p class="vert" aria-hidden="true"><span lang="hi">कर्म</span> work</p>
+  <p class="mg" style="--t:13rem">50th in Sudocrypt. Twice. Same rank, two different years.</p>
+  <div class="sec-head">
+    <h2 class="big">The contact sheet</h2>
+    <p class="lede">Every frame from the last few years. The ones circled in red are still being shot. Open any frame to look closer.</p>
+  </div>
+  <div class="sheet-tools">
+    <button type="button" class="ghost" id="rewind" aria-pressed="false">Wind the film back</button>
+  </div>
+  <div class="sheet" id="sheet"></div>
+  <div class="loupe" id="loupe" aria-live="polite"></div>
+
+  <div class="also">
+    <div><h3>Summer programs and trainings</h3><p id="prog"></p></div>
+    <div><h3>Courses and certificates</h3><p id="cert"></p></div>
+  </div>
+</section>
+
+<figure class="plate develops">
+  <img src="../assets/img/cliff.jpg" alt="Shesh in sunglasses above the Pacific at Point Reyes" loading="lazy">
+  <figcaption>Point Reyes. Exposed for the sky, and the sky won.</figcaption>
+</figure>
+
+<!-- ============ रचना / Made ============ -->
+<section class="sec" id="rachna">
+  <p class="vert" aria-hidden="true"><span lang="hi">रचना</span> made</p>
+  <p class="mg" style="--t:9rem">HaptiBraille reads with no sound, no screen and no sight. Just taps.</p>
+  <div class="sec-head">
+    <h2 class="big">Things I made</h2>
+    <p class="lede">Hung up to dry.</p>
+  </div>
+  <div class="line" aria-hidden="true"></div>
+  <div class="prints" id="prints"></div>
+  <p class="center"><a class="link" href="https://github.com/rbksh" target="_blank" rel="noopener">Everything else is on GitHub</a></p>
+</section>
+
+<!-- ============ लेख / Writing ============ -->
+<section class="sec" id="lekh">
+  <p class="vert" aria-hidden="true"><span lang="hi">लेख</span> writing</p>
+  <p class="mg" style="--t:10rem">A metal spoon and a wooden spatula, same temperature. Touch both. Then ask me why.</p>
+  <div class="sec-head">
+    <h2 class="big">The long way round</h2>
+    <p class="lede">Heat as water flowing between tanks. Hashing as a smoothie. Time travel as a thought experiment. Each of these began as a question I couldn’t put down.</p>
+  </div>
+  <div id="essays"></div>
+</section>
+
+<!-- ============ ताल / Taal: sawaal-jawaab ============ -->
+<section class="sec taal" id="taal">
+  <p class="vert" aria-hidden="true"><span lang="hi">ताल</span> rhythm</p>
+  <p class="mg" style="--t:12rem">Sam is where you land. Khali is where you breathe. Say the word for practice, and a room opens.</p>
+  <div class="sec-head">
+    <h2 class="big">Sawaal–jawaab</h2>
+    <p class="lede">In Hindustani music, two players trade phrases: a question, then an answer. I’ve played tabla since 2019 and beatboxed for about as long. I’ll ask. You answer.</p>
+    <p class="small">Turn your sound on. Play the pads with a mouse, a finger, or the keys shown on them. Each answer you get right tells you something about me.</p>
+  </div>
+
+  <div class="stage">
+    <div class="lanes">
+      <div class="lane me"><span class="who-l">Shesh</span><div class="notes" id="laneMe"></div></div>
+      <div class="lane you"><span class="who-l">You</span><div class="notes" id="laneYou"></div></div>
+    </div>
+    <div class="pads" id="pads"></div>
+    <div class="stage-ctl">
+      <button type="button" class="solid" id="ask">Ask me a question</button>
+      <p class="status" id="status" role="status" aria-live="polite">Free play. The pads are yours until you ask for a question.</p>
+    </div>
+    <ol class="unlocked" id="unlocked" aria-label="What you’ve learned"></ol>
+  </div>
+</section>
+
+<!-- ============ संग्रह / Archive ============ -->
+<section class="sec" id="sangrah">
+  <p class="vert" aria-hidden="true"><span lang="hi">संग्रह</span> archive</p>
+  <p class="mg" style="--t:11rem">Lane four is for the fastest seed. I keep finishing fourth. Click one of them.</p>
+  <div class="sec-head">
+    <h2 class="big">The archive</h2>
+    <p class="lede">Negatives kept in drawers. Open one. Some of them are fourth places, and those taught me the most.</p>
+  </div>
+  <div class="drawers" id="drawers"></div>
+</section>
+
+<!-- ============ पत्र / Letter ============ -->
+<section class="sec" id="patra">
+  <p class="vert" aria-hidden="true"><span lang="hi">पत्र</span> letter</p>
+  <p class="mg" style="--t:6rem">If you ever stop moving on this page, something develops.</p>
+  <div class="letter-wrap">
+    <figure class="photo develops small-photo">
+      <img src="../assets/img/street.jpg" alt="Shesh with arms crossed on a city street at dusk" loading="lazy">
+    </figure>
+    <form class="letter" id="form" novalidate>
+      <h2>Leave me a letter</h2>
+      <p class="letter-sub">A question, an idea, a rhythm you want to trade. It goes straight to my inbox.</p>
+      <label>From<input id="cn" name="name" autocomplete="name" placeholder="your name"></label>
+      <label>Reply to<input id="ce" name="email" type="email" autocomplete="email" placeholder="your email"></label>
+      <label class="msg">Message<textarea id="cm" name="message" rows="6" required></textarea></label>
+      <div class="letter-foot">
+        <button class="solid" id="send" type="submit">Seal and send</button>
+        <span class="stamp" id="stamp" aria-hidden="true">शेष</span>
+      </div>
+      <p class="small" id="formMsg" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+  <p class="elsewhere">Or <a href="https://www.linkedin.com/in/shesh08/" target="_blank" rel="noopener">LinkedIn</a>, <a href="https://github.com/rbksh" target="_blank" rel="noopener">GitHub</a>, <a href="mailto:rbkshesh@gmail.com">rbkshesh@gmail.com</a>.</p>
+</section>
+
+</main>
+
+<footer>
+  <blockquote>
+    <p>“The impediment to action advances action. What stands in the way becomes the way.”</p>
+    <cite>Marcus Aurelius, <i>Meditations</i> 5.20</cite>
+  </blockquote>
+  <nav class="rooms-index" id="roomsIndex" aria-label="Hidden rooms"></nav>
+  <p class="small">Prefer it with the lights on? <a href="../">Back to the main site</a>.</p>
+  <p class="small">© 2026 Shesh Shiromani.</p>
+</footer>
+
+<!-- The hidden room -->
+<div class="room" id="room" role="dialog" aria-modal="true" aria-labelledby="roomTitle" hidden>
+  <div class="room-paper">
+    <button type="button" class="ghost close" id="roomClose">Close</button>
+    <p class="dev small-dev" lang="hi">शेष</p>
+    <h2 id="roomTitle">What remains</h2>
+    <p>In the old stories, Shesha is the serpent who stays when everything else dissolves at the end of a cycle. He is what remains, and the worlds rest on him until they begin again. I like having a name that means that.</p>
+    <p>You found all three seals, so here are the things that didn’t fit anywhere else.</p>
+    <h3>On losing</h3>
+    <p>I have a very specific talent for finishing fourth: butterfly, freestyle, relay, twice each at Khelo India Inter-State. Close enough to the podium to hear the anthem. You learn more from fourth than from first. You learn that the work goes on.</p>
+    <h3>Words I keep</h3>
+    <p>“Study hard what interests you the most in the most undisciplined, irreverent, and original manner possible.” Richard Feynman.</p>
+    <h3>What I carry</h3>
+    <dl class="facts" id="uses"></dl>
+    <p class="small">Thank you for looking this closely.</p>
+  </div>
+</div>
+
+<script src="main.js"></script>
+<script src="rooms.js"></script>
+</body>
+</html>
